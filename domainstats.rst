@@ -64,7 +64,7 @@ From https://github.com/SMAPPER/docker_domain_stats#updating-top-1m-file:
     #crontab entry to grab new Top 1m CSV for DomainStats Docker image   
     SHELL=/bin/sh
     PATH=/usr/local/sbin:/usr/localbin:/sbin:/bin/usr/sbin:/usr/bin
-    1 07 * * *   root ( wget -q http://s3.amazonaws.com/alexa-static/top-1m.csv.zip -O /tmp/top-1m.csv.zip && unzip -o 
+    1 07 * * *   root ( wget -q http://s3-us-west-1.amazonaws.com/umbrella-static/top-1m.csv.zip -O /tmp/top-1m.csv.zip && unzip -o 
     /tmp/top-1m.csv.zip -d /tmp && docker cp /tmp/top-1m.csv so-domainstats:/opt/domain_stats/top-1m.csv && docker restart 
     so-domainstats && rm -f /tmp/top-1m.csv* ) > /dev/null 2>&1
 
